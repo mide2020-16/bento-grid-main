@@ -1,298 +1,67 @@
-*,
-*::after,
-*::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Bento grid</title>
+</head>
+<body>
+  <main>
+    <section aria-label="Bento grid layout of social media tools" class="bento">
+      
+      <article class="bento-item schedule" aria-label="Create and schedule content faster">
+        <h2>Create and schedule content <em class="text-purple">quicker.</em></h2>
+        <img src="./images/illustration-create-post.webp" alt="Illustration showing how to create a social media post">
+      </article>
+      
+      <article class="bento-item social" aria-label="Boost your social media presence">
+        <h2>Social Media <span class="text-yellow">10x</span> <em>Faster</em> with AI</h2>
+        <img src="./images/illustration-five-stars.webp" alt="Five-star rating illustration" width="300">
+        <p>Over 4,000 5-star reviews</p>
+      </article>
 
-:root {
-    /* colors */
-    --clr-purple-muted: hsl(254, 88%, 90%);
-    --clr-purple: hsl(256, 67%, 59%);
-    --clr-yellow-muted: hsl(31, 66%, 93%);
-    --clr-yellow: hsl(39, 100%, 71%);
-    --clr-white: hsl(0, 0%, 100%);
-    --clr-bg-white: hsl(0, 0%, 96.1%);
-    --clr-black: hsl(0, 0%, 7%);
-
-    /* spaces */
-    --space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
-    --space-2xs: clamp(0.5rem, 0.4565rem + 0.2174vw, 0.625rem);
-    --space-xs: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
-    --space-s: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
-    --space-m: clamp(1.5rem, 1.3696rem + 0.6522vw, 1.875rem);
-    --space-l: clamp(2rem, 1.8261rem + 0.8696vw, 2.5rem);
-    --space-xl: clamp(3rem, 2.7391rem + 1.3043vw, 3.75rem);
-    --space-2xl: clamp(4rem, 3.6522rem + 1.7391vw, 5rem);
-    --space-3xl: clamp(6rem, 5.4783rem + 2.6087vw, 7.5rem);
-
-    /* typos */
-    --fs--2: clamp(0.6944rem, 0.6577rem + 0.1836vw, 0.8rem);
-    --fs--1: clamp(0.8333rem, 0.7754rem + 0.2899vw, 1rem);
-    --fs-0: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
-    --fs-1: clamp(1.2rem, 1.0739rem + 0.6304vw, 1.5625rem);
-    --fs-2: clamp(1.44rem, 1.2615rem + 0.8924vw, 1.9531rem);
-    --fs-3: clamp(1.728rem, 1.4799rem + 1.2407vw, 2.4414rem);
-    --fs-4: clamp(2.0736rem, 1.7334rem + 1.7011vw, 3.0518rem);
-    --fs-5: clamp(2.4883rem, 2.027rem + 2.3067vw, 3.8147rem);
-
-    /* border */
-    --border-radius: 16px;
-}
-
-/* utils */
-.text-yellow {
-    color: var(--clr-yellow);
-}
-
-.text-purple {
-    color: var(--clr-purple);
-}
-
-h2 {
-    text-wrap: balance;
-    font-weight: 500;
-    line-height: 1.1;
-}
-
-img {
-    display: block;
-    width: 100%;
-}
-
-body {
-    font-family: 'DM Sans', sans-serif;
-    background-color: var(--clr-white);
-    font-size: var(--fs-0);
-    padding: var(--space-l);
-}
-
-.bento {
-    display: grid;
-    gap: var(--space-s);
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        'social'
-        'multiple'
-        'consistency'
-        'timing'
-        'followers'
-        'growth'
-        'schedule'
-        'content';
+      <article class="bento-item timing" aria-label="Optimize post timings">
+        <h2>Schedule to social media</h2>
+        <div class="img-wrapper">
+          <img src="./images/illustration-schedule-posts.webp" alt="Illustration of scheduling social media posts">
+        </div>
+        <p>Optimize post timings to publish content at the perfect time for your audience</p>
+      </article>
+      
+      <article class="bento-item content" aria-label="Write AI-generated content">
+        <h2>Write your content using AI.</h2>
+        <img src="./images/illustration-ai-content.webp" alt="Illustration of AI generating content">
+      </article>
+      
+      <article class="bento-item multiple" aria-label="Manage multiple accounts and platforms">
+        <div class="img-wrapper">
+          <img src="./images/illustration-multiple-platforms.webp" alt="Illustration of managing multiple platforms">
+        </div>
+        <h2>Manage multiple accounts and platforms</h2>
+      </article>
+      
+      <article class="bento-item growth" aria-label="Increase audience growth">
+        <h2>>56%</h2>
+        <p>faster audience growth</p>
+        <img src="./images/illustration-audience-growth.webp" alt="Illustration of growing audience">
+      </article>
+      
+      <article class="bento-item consistency" aria-label="Maintain a consistent posting schedule">
+        <h2>Maintain a consistent posting schedule</h2>
+        <img src="./images/illustration-consistent-schedule.webp" alt="Illustration of maintaining a consistent schedule">
+      </article>
+      
+      <article class="bento-item followers" aria-label="Grow followers with consistent content">
+        <img src="./images/illustration-grow-followers.webp" alt="Illustration showing growth in followers">
+        <h2>Grow followers with non-stop content</h2>
+      </article>
     
-    @media screen and (min-width: 768px) {
-        grid-template-columns: repeat(4, 0.8fr);
-        grid-template-rows: 1fr 50px 0.5fr 1fr;
-        grid-template-areas:
-            'schedule social social timing'
-            'schedule multiple consistency timing'
-            'content multiple consistency timing'
-            'content growth followers followers';
-    }
-}
-
-.bento-item {
-    padding: var(--space-m);
-    border-radius: var(--border-radius);
-    background-color: var(--clr-purple-muted);
-    width: 100%;
-    overflow: hidden;
-    display: grid;
-    gap: var(--space-s);
-
-    p {
-        text-wrap: pretty;
-    }
-
-    @media screen and (min-width: 768px) {
-        padding: var(--space-s);
-    }
-}
-
-.img-wrapper {
-    overflow: hidden;
-    max-width: 100%;
-}
-
-.schedule {
-    grid-area: schedule;
-    background-color: var(--clr-yellow-muted);
-    align-items: center;
-    align-content: center;
-
-    img {
-        width: 200px;
-
-        @media screen and (min-width: 768px) {
-            width: 90%;
-        }
-    }
-}
-
-.social {
-    grid-area: social;
-    background-color: var(--clr-purple);
-    color: var(--clr-white);
-    text-align: center;
-
-    h2 {
-        font-size: var(--fs-4);
-    }
-
-    img {
-        width: 200px;
-        margin-inline: auto;
-    }
-
-    @media screen and (min-width: 768px) {
-        gap: var(--space-xs);
-    }
-}
-
-.timing {
-    grid-area: timing;
-    background-color: var(--clr-purple-muted);
-    align-content: center;
-    text-align: center;
-    justify-content: start;
-
-    img {
-        margin-inline: auto;
-    }
-
-    @media screen and (min-width: 768px) {
-        text-align: left;
-        justify-items: start;
-
-        img {
-            max-width: 360px;
-        }
-    }
-}
-
-.content {
-    grid-area: content;
-    background-color: var(--clr-yellow);
-
-    img {
-        width: 250px;
-    }
-
-    h2 {
-        font-weight: 500;
-        font-size: var(--fs-3);
-    }
-}
-
-.multiple {
-    grid-area: multiple;
-    background-color: var(--clr-bg-white);
-
-    h2 {
-        font-size: var(--fs-2);
-    }
-
-    @media screen and (min-width: 768px) {
-        img {
-            max-width: 300px;
-        }
-
-        h2 {
-            font-size: var(--fs-1);
-            font-weight: 500;
-        }
-    }
-}
-
-.growth {
-    grid-area: growth;
-    background-color: var(--clr-bg-white);
-
-    h2 {
-        font-size: var(--fs-5);
-        font-weight: 500;
-    }
-
-    p {
-        font-size: var(--fs-0);
-        font-weight: 400;
-    }
-
-    img {
-        width: 200px;
-
-        @media screen and (min-width: 768px) {
-            width: 70%;
-        }
-    }
-}
-
-.consistency {
-    grid-area: consistency;
-    padding-block-end: 0;
-    background-color: var(--clr-yellow);
-
-    img {
-        width: 200px;
-
-        @media screen and (min-width: 768px) {
-            width: 100%;
-        }
-    }
-
-    h2 {
-        font-size: var(--fs-1);
-    }
-}
-
-.followers {
-    grid-area: followers;
-    place-items: center;
-    background-color: var(--clr-purple);
-    color: var(--clr-white);
-    text-align: center;
-
-    h2 {
-        font-size: var(--fs-1);
-        text-align: center;
-    }
-
-    img {
-        width: 240px;
-    }
-
-    @media screen and (min-width: 768px) {
-        display: flex;
-        gap: var(--space-s);
-
-        h2 {
-            justify-content: left;
-            text-align: left;
-            text-wrap: pretty;
-            font-size: var(--fs-3);
-        }
-    }
-}
-
-/* Footer Styles */
-.footer {
-    background-color: var(--clr-bg-white);
-    padding: var(--space-s);
-    text-align: center;
-    font-size: var(--fs--1);
-    color: var(--clr-black);
-    margin-top: var(--space-l);
-}
-
-.footer a {
-    color: var(--clr-purple);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.footer a:hover {
-    color: var(--clr-yellow);
-}
+    </section>
+  </main>
+</body>
+</html>
