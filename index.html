@@ -1,0 +1,298 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* colors */
+    --clr-purple-muted: hsl(254, 88%, 90%);
+    --clr-purple: hsl(256, 67%, 59%);
+    --clr-yellow-muted: hsl(31, 66%, 93%);
+    --clr-yellow: hsl(39, 100%, 71%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-bg-white: hsl(0, 0%, 96.1%);
+    --clr-black: hsl(0, 0%, 7%);
+
+    /* spaces */
+    --space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
+    --space-2xs: clamp(0.5rem, 0.4565rem + 0.2174vw, 0.625rem);
+    --space-xs: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
+    --space-s: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
+    --space-m: clamp(1.5rem, 1.3696rem + 0.6522vw, 1.875rem);
+    --space-l: clamp(2rem, 1.8261rem + 0.8696vw, 2.5rem);
+    --space-xl: clamp(3rem, 2.7391rem + 1.3043vw, 3.75rem);
+    --space-2xl: clamp(4rem, 3.6522rem + 1.7391vw, 5rem);
+    --space-3xl: clamp(6rem, 5.4783rem + 2.6087vw, 7.5rem);
+
+    /* typos */
+    --fs--2: clamp(0.6944rem, 0.6577rem + 0.1836vw, 0.8rem);
+    --fs--1: clamp(0.8333rem, 0.7754rem + 0.2899vw, 1rem);
+    --fs-0: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
+    --fs-1: clamp(1.2rem, 1.0739rem + 0.6304vw, 1.5625rem);
+    --fs-2: clamp(1.44rem, 1.2615rem + 0.8924vw, 1.9531rem);
+    --fs-3: clamp(1.728rem, 1.4799rem + 1.2407vw, 2.4414rem);
+    --fs-4: clamp(2.0736rem, 1.7334rem + 1.7011vw, 3.0518rem);
+    --fs-5: clamp(2.4883rem, 2.027rem + 2.3067vw, 3.8147rem);
+
+    /* border */
+    --border-radius: 16px;
+}
+
+/* utils */
+.text-yellow {
+    color: var(--clr-yellow);
+}
+
+.text-purple {
+    color: var(--clr-purple);
+}
+
+h2 {
+    text-wrap: balance;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--clr-white);
+    font-size: var(--fs-0);
+    padding: var(--space-l);
+}
+
+.bento {
+    display: grid;
+    gap: var(--space-s);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'social'
+        'multiple'
+        'consistency'
+        'timing'
+        'followers'
+        'growth'
+        'schedule'
+        'content';
+    
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(4, 0.8fr);
+        grid-template-rows: 1fr 50px 0.5fr 1fr;
+        grid-template-areas:
+            'schedule social social timing'
+            'schedule multiple consistency timing'
+            'content multiple consistency timing'
+            'content growth followers followers';
+    }
+}
+
+.bento-item {
+    padding: var(--space-m);
+    border-radius: var(--border-radius);
+    background-color: var(--clr-purple-muted);
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    gap: var(--space-s);
+
+    p {
+        text-wrap: pretty;
+    }
+
+    @media screen and (min-width: 768px) {
+        padding: var(--space-s);
+    }
+}
+
+.img-wrapper {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.schedule {
+    grid-area: schedule;
+    background-color: var(--clr-yellow-muted);
+    align-items: center;
+    align-content: center;
+
+    img {
+        width: 200px;
+
+        @media screen and (min-width: 768px) {
+            width: 90%;
+        }
+    }
+}
+
+.social {
+    grid-area: social;
+    background-color: var(--clr-purple);
+    color: var(--clr-white);
+    text-align: center;
+
+    h2 {
+        font-size: var(--fs-4);
+    }
+
+    img {
+        width: 200px;
+        margin-inline: auto;
+    }
+
+    @media screen and (min-width: 768px) {
+        gap: var(--space-xs);
+    }
+}
+
+.timing {
+    grid-area: timing;
+    background-color: var(--clr-purple-muted);
+    align-content: center;
+    text-align: center;
+    justify-content: start;
+
+    img {
+        margin-inline: auto;
+    }
+
+    @media screen and (min-width: 768px) {
+        text-align: left;
+        justify-items: start;
+
+        img {
+            max-width: 360px;
+        }
+    }
+}
+
+.content {
+    grid-area: content;
+    background-color: var(--clr-yellow);
+
+    img {
+        width: 250px;
+    }
+
+    h2 {
+        font-weight: 500;
+        font-size: var(--fs-3);
+    }
+}
+
+.multiple {
+    grid-area: multiple;
+    background-color: var(--clr-bg-white);
+
+    h2 {
+        font-size: var(--fs-2);
+    }
+
+    @media screen and (min-width: 768px) {
+        img {
+            max-width: 300px;
+        }
+
+        h2 {
+            font-size: var(--fs-1);
+            font-weight: 500;
+        }
+    }
+}
+
+.growth {
+    grid-area: growth;
+    background-color: var(--clr-bg-white);
+
+    h2 {
+        font-size: var(--fs-5);
+        font-weight: 500;
+    }
+
+    p {
+        font-size: var(--fs-0);
+        font-weight: 400;
+    }
+
+    img {
+        width: 200px;
+
+        @media screen and (min-width: 768px) {
+            width: 70%;
+        }
+    }
+}
+
+.consistency {
+    grid-area: consistency;
+    padding-block-end: 0;
+    background-color: var(--clr-yellow);
+
+    img {
+        width: 200px;
+
+        @media screen and (min-width: 768px) {
+            width: 100%;
+        }
+    }
+
+    h2 {
+        font-size: var(--fs-1);
+    }
+}
+
+.followers {
+    grid-area: followers;
+    place-items: center;
+    background-color: var(--clr-purple);
+    color: var(--clr-white);
+    text-align: center;
+
+    h2 {
+        font-size: var(--fs-1);
+        text-align: center;
+    }
+
+    img {
+        width: 240px;
+    }
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        gap: var(--space-s);
+
+        h2 {
+            justify-content: left;
+            text-align: left;
+            text-wrap: pretty;
+            font-size: var(--fs-3);
+        }
+    }
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--clr-bg-white);
+    padding: var(--space-s);
+    text-align: center;
+    font-size: var(--fs--1);
+    color: var(--clr-black);
+    margin-top: var(--space-l);
+}
+
+.footer a {
+    color: var(--clr-purple);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--clr-yellow);
+}
